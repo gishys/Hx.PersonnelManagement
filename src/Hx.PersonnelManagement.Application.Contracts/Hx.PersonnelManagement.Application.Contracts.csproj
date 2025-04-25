@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Volo.Abp.FluentValidation" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Hx.PersonnelManagement.Domain.Shared\Hx.PersonnelManagement.Domain.Shared.csproj" />
   </ItemGroup>
 

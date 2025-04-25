@@ -1,27 +1,31 @@
-﻿namespace Hx.PersonnelManagement.Application.Contracts
+﻿using Hx.PersonnelManagement.Application.Contracts;
+using Hx.PersonnelManagement.Domain.Shared;
+using Hx.PropertyRightManagement.Domain.Shared;
+
+namespace Hx.PropertyRightManagement.Application.Contracts
 {
     /// <summary>
-    /// 不动产权力实体
+    /// 不动产权利实体
     /// </summary>
-    public class PropertyRightDto
+    public class PropertyRightSurveyFormDto<RHolder> where RHolder : PersonDto
     {
         /// <summary>
-        /// 权力ID
+        /// 权利ID
         /// </summary>
         public Guid Id { get; set; }
 
         /// <summary>
         /// 所有权性质（国有/集体所有）
         /// </summary>
-        public required string OwnershipNature { get; set; }
+        public required OwnershipNature OwnershipNature { get; set; }
 
         /// <summary>
-        /// 权力类型（所有权/抵押权/地役权等）
+        /// 权利类型（所有权/抵押权/地役权等）
         /// </summary>
         public required string RightType { get; set; }
 
         /// <summary>
-        /// 权力性质（如出让/划拨）
+        /// 权利性质（如出让/划拨）
         /// </summary>
         public required string RightNature { get; set; }
 
@@ -100,9 +104,15 @@
         /// </summary>
         public DateTime? LandUseTermEnd { get; set; }
 
+
+        /// <summary>
+        /// 权利人类型
+        /// </summary>
+        public RightHolderType RightHolderType { get; set; }
+
         /// <summary>
         /// 权利人关联
         /// </summary>
-        public required virtual ICollection<RightHolderRelationDto> Holders { get; set; }
+        public required virtual ICollection<RHolder> Holders { get; set; }
     }
 }

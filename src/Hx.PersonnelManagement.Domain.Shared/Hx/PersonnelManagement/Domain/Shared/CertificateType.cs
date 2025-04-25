@@ -61,6 +61,4 @@ namespace Hx.PersonnelManagement.Domain.Shared
         [Description("其他")]
         Other = 99
     }
-
-    
 }

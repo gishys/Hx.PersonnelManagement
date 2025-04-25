@@ -1,6 +1,8 @@
-﻿namespace Hx.PersonnelManagement.Application.Contracts
+﻿using Hx.PersonnelManagement.Domain.Shared;
+
+namespace Hx.PersonnelManagement.Application.Contracts
 {
-    public class RightHolderRelationDto
+    public class RightHolderRelationDto<RHolder> where RHolder : PersonDto
     {
         /// <summary>
         /// 业务标识
@@ -10,7 +12,7 @@
         /// <summary>
         /// 人员Id
         /// </summary>
-        public Guid PersonId { get; set; }
+        public Guid HolderId { get; set; }
 
         /// <summary>
         /// 权利人特征
@@ -18,7 +20,7 @@
         public required string HolderRole { get; set; }
 
         /// <summary>
-        /// 权力比例
+        /// 权利比例
         /// </summary>
         public required string OwnershipType { get; set; }
 
@@ -26,5 +28,15 @@
         /// 是否持证
         /// </summary>
         public bool IsCertificateHolder { get; set; }
+
+        /// <summary>
+        /// 权利人类型
+        /// </summary>
+        public RightHolderType RightHolderType { get; set; }
+
+        /// <summary>
+        /// 权利人
+        /// </summary>
+        public required ICollection<RHolder> RightHolders { get; set; }
     }
 }
