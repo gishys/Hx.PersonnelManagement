@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Hx.PersonnelManagement": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
