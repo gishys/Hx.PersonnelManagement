@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="..\..\common.props" />
+    <Import Project="..\common.props" />
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -30,6 +30,10 @@
             <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Hx.PropertyRightManagement.Application\Hx.PropertyRightManagement.Application.csproj" />
     </ItemGroup>
 
 </Project>

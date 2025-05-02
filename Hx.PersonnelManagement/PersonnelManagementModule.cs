@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Hx.PropertyRightManagement.Application;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -9,9 +10,8 @@ using Volo.Abp.Modularity;
 
 namespace Hx.PersonnelManagement;
 
-[DependsOn(
-    typeof(AbpAutofacModule)
-)]
+[DependsOn(typeof(AbpAutofacModule))]
+[DependsOn(typeof(HxPropertyRightManagementApplicationModule))]
 public class PersonnelManagementModule : AbpModule
 {
     public override Task OnApplicationInitializationAsync(ApplicationInitializationContext context)

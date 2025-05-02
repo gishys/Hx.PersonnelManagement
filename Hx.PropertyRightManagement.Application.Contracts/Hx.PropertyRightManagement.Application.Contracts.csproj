@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.FluentValidation" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hx.PersonnelManagement.Application.Contracts\Hx.PersonnelManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Hx.PropertyRightManagement.Domain.Shared\Hx.PropertyRightManagement.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

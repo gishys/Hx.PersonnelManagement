@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hx.PropertyRightManagement.Domain\Hx.PropertyRightManagement.Domain.csproj" />
+    <ProjectReference Include="..\Hx.PropertyRightManagement.Gdb.Access\Hx.PropertyRightManagement.Gdb.Access.csproj" />
+  </ItemGroup>
+
+</Project>

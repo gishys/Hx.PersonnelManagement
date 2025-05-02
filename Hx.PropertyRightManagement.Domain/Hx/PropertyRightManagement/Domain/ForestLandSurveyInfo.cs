@@ -1,19 +1,11 @@
-﻿using Hx.PersonnelManagement.Application.Contracts;
-using Hx.PersonnelManagement.Domain.Shared;
+﻿using Hx.PersonnelManagement.Domain;
 using Hx.PropertyRightManagement.Domain.Shared;
+using Volo.Abp.Domain.Entities.Auditing;
 
-namespace Hx.PropertyRightManagement.Application.Contracts
+namespace Hx.PropertyRightManagement.Domain
 {
-    /// <summary>
-    /// 不动产权利实体
-    /// </summary>
-    public class PropertyRightSurveyFormDto<RHolder> where RHolder : PersonDto
+    public class ForestLandSurveyInfo<RHolder> : AuditedAggregateRoot<Guid> where RHolder : Person
     {
-        /// <summary>
-        /// 权利ID
-        /// </summary>
-        public Guid Id { get; set; }
-
         /// <summary>
         /// 所有权性质（国有/集体所有）
         /// </summary>
@@ -104,15 +96,9 @@ namespace Hx.PropertyRightManagement.Application.Contracts
         /// </summary>
         public DateTime? LandUseTermEnd { get; set; }
 
-
-        /// <summary>
-        /// 权利人类型
-        /// </summary>
-        public RightHolderType RightHolderType { get; set; }
-
         /// <summary>
         /// 权利人关联
         /// </summary>
-        public required virtual ICollection<RHolder> Holders { get; set; }
+        public required virtual ICollection<RightHolderRelation<RHolder>> Holders { get; set; }
     }
 }
